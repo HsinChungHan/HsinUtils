@@ -20,8 +20,8 @@ public protocol TimerManagerDelegate: AnyObject {
 public class TimerManager {
   public static let shared = TimerManager()
   
-  weak var dataSource: TimerManagerDataSource?
-  weak var delegate: TimerManagerDelegate?
+  public weak var dataSource: TimerManagerDataSource?
+  public weak var delegate: TimerManagerDelegate?
   
   fileprivate var timer: Timer?
   
