@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
   static func makeRandomColor() -> UIColor {
     return UIColor(displayP3Red: CGFloat(Int.random(in: 0...255)/255), green: CGFloat(Int.random(in: 0...255)/255), blue: CGFloat(Int.random(in: 0...255)/255), alpha: 1.0)
   }

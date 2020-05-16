@@ -7,12 +7,12 @@
 
 import UIKit
 
-struct AnchoredConstraints {
+public struct AnchoredConstraints {
     var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
 }
-extension UIView{
+public extension UIView{
     @discardableResult
-    func anchor(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero ) -> AnchoredConstraints {
+  func anchor(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero ) -> AnchoredConstraints {
         translatesAutoresizingMaskIntoConstraints = false
         
         var anchoredConstraints = AnchoredConstraints()
@@ -49,7 +49,7 @@ extension UIView{
     }
     
     
-    func fillSuperView(padding: UIEdgeInsets = .zero){
+  func fillSuperView(padding: UIEdgeInsets = .zero){
         translatesAutoresizingMaskIntoConstraints = false
         if let superViewTopAnchor = superview?.topAnchor{
             topAnchor.constraint(equalTo: superViewTopAnchor, constant: padding.top).isActive = true
@@ -68,7 +68,7 @@ extension UIView{
         }
     }
     
-    func centerInSuperView(size: CGSize = .zero){
+  func centerInSuperView(size: CGSize = .zero){
         translatesAutoresizingMaskIntoConstraints = false
         if let superViewCneterXAnchor = superview?.centerXAnchor{
             centerXAnchor.constraint(equalTo: superViewCneterXAnchor).isActive = true
